@@ -81,3 +81,6 @@ if (typeof window === 'undefined') {
 }
 
 export default App;
+
+console.log("Renderizando App, estado atual:", currentState);
+console.log("Usuário logado:", user);
