@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useAuth } from './hooks/useAuth'; // ✅ Correto
 import Header from './components/Header';
 import HeroSection from './components/HeroSection';
 import Features from './components/Features';
@@ -9,7 +10,7 @@ import Footer from './components/Footer';
 import Login from './components/Login';
 import Register from './components/Register';
 import Dashboard from './components/Dashboard';
-import { useAuth } from './hooks/useAuth'; // ✅ Correto
+
 
 type AppState = 'home' | 'login' | 'register' | 'dashboard';
 
