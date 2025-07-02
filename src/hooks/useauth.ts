@@ -11,6 +11,12 @@ const firebaseConfig = {
   appId: "1:760029509620:web:11654dd39b1b11bce0aba1"
 };
 
+if (typeof window === 'undefined') {
+  // Evita problemas de execução no SSR
+  throw new Error('useAuth só deve ser usado no client.');
+}
+
+
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
