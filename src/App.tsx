@@ -9,19 +9,39 @@ import Footer from './components/Footer';
 import Login from './components/Login';
 import Register from './components/Register';
 import Dashboard from './components/Dashboard';
+import { useAuth } from './hooks/useAuth';
 
 type AppState = 'home' | 'login' | 'register' | 'dashboard';
 
 function App() {
   const [currentState, setCurrentState] = useState<AppState>('home');
+  const { user } = useAuth();
 
+  // Controle de navegação
   const handleLoginClick = () => setCurrentState('login');
   const handleRegisterClick = () => setCurrentState('register');
   const handleBackToHome = () => setCurrentState('home');
-  const handleLoginSuccess = () => setCurrentState('dashboard');
-  const handleRegisterSuccess = () => setCurrentState('dashboard');
-  const handleLogout = () => setCurrentState('home');
 
+  const handleLoginSuccess = () => {
+    setCurrentState('dashboard');
+  };
+
+  const handleRegisterSuccess = () => {
+    setCurrentState('dashboard');
+  };
+
+  const handleLogout = () => {
+    setCurrentState('home');
+  };
+
+  // Redireciona automaticamente se já estiver logado
+  React.useEffect(() => {
+    if (user) {
+      setCurrentState('dashboard');
+    }
+  }, [user]);
+
+  // Roteamento por estado
   if (currentState === 'login') {
     return (
       <Login
@@ -46,6 +66,7 @@ function App() {
     return <Dashboard onLogout={handleLogout} />;
   }
 
+  // Página inicial padrão
   return (
     <div className="min-h-screen bg-white">
       <Header
