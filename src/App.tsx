@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useAuth } from './hooks/useAuth';
-
+import { useAuth } from './useAuth'; // funciona se estiverem juntos
 import Header from './components/Header';
 import HeroSection from './components/HeroSection';
 import Features from './components/Features';
