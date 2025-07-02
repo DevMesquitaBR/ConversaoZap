@@ -39,6 +39,10 @@ function App() {
     );
   }
 
+if (typeof window === 'undefined') {
+  return null;
+}
+
   switch (currentState) {
     case 'login':
       return (
