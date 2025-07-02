@@ -3,6 +3,9 @@ import { MessageCircle, Menu, X } from 'lucide-react';
 import { useState } from "react";
 import AuthModal from "./AuthModal";
 
+const [showAuth, setShowAuth] = useState(false);
+
+
 interface HeaderProps {
   onLoginClick: () => void;
   onRegisterClick: () => void;
