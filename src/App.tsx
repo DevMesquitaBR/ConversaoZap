@@ -9,7 +9,7 @@ import Footer from './components/Footer';
 import Login from './components/Login';
 import Register from './components/Register';
 import Dashboard from './components/Dashboard';
-import { useAuth } from './hooks/useAuth';
+import { useAuth } from './hooks/useAuth'; // ✅ Correto
 
 type AppState = 'home' | 'login' | 'register' | 'dashboard';
 
