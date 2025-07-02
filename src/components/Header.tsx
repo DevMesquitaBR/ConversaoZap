@@ -61,7 +61,7 @@ export default function Header({ onLoginClick, onRegisterClick }: HeaderProps) {
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center space-x-4">
             <button
-              onClick={onLoginClick}
+              onClick={() => setShowAuth(true)}
               className="text-gray-600 hover:text-gray-900 transition-colors"
             >
               Entrar
