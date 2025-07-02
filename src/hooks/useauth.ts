@@ -35,3 +35,5 @@ export function useAuth() {
 
   return { user, loading };
 }
+console.log("Renderizando App, estado atual:", currentState);
+console.log("Usuário logado:", user);
