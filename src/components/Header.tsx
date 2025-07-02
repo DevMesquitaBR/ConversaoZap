@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { MessageCircle, Menu, X } from 'lucide-react';
+import { useState } from "react";
+import AuthModal from "./AuthModal";
 
 interface HeaderProps {
   onLoginClick: () => void;
